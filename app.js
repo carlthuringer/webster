@@ -19,7 +19,7 @@ app.use(morgan('combined'))
 app.use(bodyParser.json())
 
 app.get('/', function (req, res) {
-  console.log("HI");
+  console.log('HI')
   res.sendFile(path.join(publicDir, 'index.html'))
 })
 
