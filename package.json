@@ -1,0 +1,28 @@
+{
+  "name": "webster",
+  "version": "1.0.0",
+  "description": "Webster puts the Web in Website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "supervisor --extensions 'node,js,html' app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carlthuringer/webster.git"
+  },
+  "author": "Carl Thuringer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/carlthuringer/webster/issues"
+  },
+  "homepage": "https://github.com/carlthuringer/webster#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "morgan": "^1.7.0",
+    "reload": "^1.0.1",
+    "scraperjs": "^1.2.0",
+    "supervisor": "^0.11.0"
+  }
+}
