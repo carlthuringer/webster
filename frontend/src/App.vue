@@ -3,6 +3,11 @@
     Search:
     <input v-model="search">
     <button v-on:click="sendSearch">Go</button>
+    <ul>
+      <li v-for="link in links">
+        <a href="http://en.wikipedia.org/{{ link }}">{{ link }}</a>
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -12,7 +17,8 @@ import Hello from './components/Hello'
 export default {
   data: function () {
     return {
-      search: ''
+      search: '',
+      links: []
     }
   },
   components: {
@@ -22,25 +28,22 @@ export default {
     sendSearch: function () {
       this.$dispatch('sendSearch', this.search)
     }
+  },
+  events: {
+    'receivedLinksData': function (data) {
+      console.log(this.links)
+      // this.links.push('wat')
+      // this.links.length = 0
+      this.links = data
+    }
   }
 }
 </script>
 
 <style>
-html {
-  height: 100%;
-}
-
-body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-}
 
 #app {
   color: #2c3e50;
-  margin-top: -100px;
   max-width: 600px;
   font-family: Source Sans Pro, Helvetica, sans-serif;
   text-align: center;

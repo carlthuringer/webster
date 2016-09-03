@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "supervisor --extensions 'node,js,html' app"
+    "start": "supervisor --extensions 'node,js,html' app",
+    "typings": "typings install"
   },
   "repository": {
     "type": "git",
@@ -27,6 +28,7 @@
     "vue": "^1.0.26"
   },
   "devDependencies": {
+    "typings": "^1.3.3",
     "webpack": "^1.13.2"
   }
 }

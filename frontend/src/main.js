@@ -14,7 +14,9 @@ new Vue({
       .send({ data: { search: search } })
       .end(function (req, res) {
         console.log('got it')
-      })
+        console.log(res.body)
+        this.$broadcast('receivedLinksData', res.body.data)
+      }.bind(this))
     }
   }
 

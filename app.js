@@ -3,6 +3,7 @@ let morgan = require('morgan')
 let bodyParser = require('body-parser')
 let http = require('http')
 let reload = require('reload')
+let scrape = require('./lib/wikiscrape')
 
 let app = express()
 
@@ -13,7 +14,11 @@ app.use(bodyParser.json())
 
 app.post('/', function (req, res) {
   console.log(req.body)
-  res.status(200).end()
+  let data = req.body.data
+  scrape(data.search).then(function (links) {
+    console.log(links)
+    res.status(200).json({ data: links })
+  })
 })
 
 let server = http.createServer(app)
