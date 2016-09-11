@@ -4,7 +4,7 @@
   "description": "Webster puts the Web in Website",
   "main": "index.js",
   "scripts": {
-    "test": "mocha lib/**/*Test.js --watch",
+    "test": "mocha lib/**/*Test.js --require test/helper.js --watch",
     "start": "supervisor --extensions 'node,js,html' app",
     "typings": "typings install"
   },
@@ -31,6 +31,7 @@
     "chai": "^3.5.0",
     "mocha": "^3.0.2",
     "typings": "^1.3.3",
-    "webpack": "^1.13.2"
+    "webpack": "^1.13.2",
+    "yakbak": "^2.5.0"
   }
 }
