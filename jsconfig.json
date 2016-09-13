@@ -12,6 +12,7 @@
 		"jspm_packages",
 		"tmp",
 		"temp",
-		"frontend/node_modules"
+		"frontend/node_modules",
+		"**/yakbak"
 	]
 }
